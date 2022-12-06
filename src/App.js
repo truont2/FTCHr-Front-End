@@ -42,6 +42,7 @@ function App() {
           user_id: data.id,
           user_name: data.user_name,
         });
+        setLoggedIn(true);
       } else {
         console.log("invalid token", data);
       }
