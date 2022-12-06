@@ -22,31 +22,31 @@ function App() {
   });
 
   // grab user data from token
-  // useEffect(()=> {
-  //   const savedToken = localStorage.getItem("token");
-  //   fetch(`${prefixURL}/api/user/verifieduser`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       authorization: `Bearer ${savedToken}`,
-  //     },
-  //   })
-  //   .then((res) => {
-  //     return res.json();
-  //   })
-  //   .then((data) => {
-  //     if (data.id) {
-  //       console.log(data, "data from the verified route");
-  //       setToken(savedToken);
-  //       setUser({
-  //         user_id: data.id,
-  //         user_name: data.user_name,
-  //       });
-  //     } else {
-  //       console.log("invalid token", data);
-  //     }
-  //   });
-  // }, []);
+  useEffect(()=> {
+    const savedToken = localStorage.getItem("token");
+    fetch(`${prefixURL}/api/user/verifieduser`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${savedToken}`,
+      },
+    })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data.id) {
+        console.log(data, "data from the verified route");
+        setToken(savedToken);
+        setUser({
+          user_id: data.id,
+          user_name: data.user_name,
+        });
+      } else {
+        console.log("invalid token", data);
+      }
+    });
+  }, []);
 
 
   // if (!token)  {
