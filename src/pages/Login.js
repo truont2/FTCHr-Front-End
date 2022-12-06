@@ -64,7 +64,7 @@ function Login({ setLoggedIn }) {
         // })
         setLoggedIn(true);
 
-        window.location.href = "/dashboard";
+        // window.location.href = "/dashboard";
       });
   };
 
