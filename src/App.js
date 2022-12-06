@@ -56,13 +56,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {token !== "" && <Header setLoggedIn={setLoggedIn} />}
+        {loggedIn && <Header setLoggedIn={setLoggedIn} />}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<SignUp setLoggedIn={setLoggedIn} setToken={setToken} />}/>
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
-          {token !== "" ?
+          {loggedIn ?
           <>
             <Route path="/messenger" element={<Messenger user={user} />} />
             <Route path="/dashboard" element={<Dashboard user={user} />} />
