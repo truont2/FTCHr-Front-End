@@ -42,6 +42,8 @@ function App() {
           user_id: data.id,
           user_name: data.user_name,
         });
+      } else {
+        console.log("invalid token", data);
       }
     });
   }, []);
