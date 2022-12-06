@@ -20,6 +20,7 @@ function App() {
     user_id: 0,
     user_name: "",
   });
+
   // grab user data from token
   useEffect(()=> {
     const savedToken = localStorage.getItem("token");
@@ -46,9 +47,9 @@ function App() {
   }, []);
 
 
-  if (!token)  {
-    return <Login setLoggedIn={setLoggedIn} />
-  }
+  // if (!token)  {
+  //   return <Login setLoggedIn={setLoggedIn} />
+  // }
 
   return (
     <div className="App">
